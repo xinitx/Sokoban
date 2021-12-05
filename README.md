@@ -1,7 +1,7 @@
 # Sokoban
 A simple push box game
 
-<img src="/Picture/1.gif">
+<img src="./1.gif">
 
 1. 运行game.py即可开始游戏
 2. 输入行数和列数（必须是大于2的数字，其他输入不能通过）
