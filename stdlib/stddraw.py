@@ -910,21 +910,24 @@ def _regressionTest():
     show()
 
 #-----------------------------------------------------------------------
-
+from . import point2DMatrix
 def _main():
     """
     Dispatch to a function that does regression testing, or to a
     dialog-box-handling function.
     """
-    import sys
-    if len(sys.argv) == 1:
-        _regressionTest()
-    elif sys.argv[1] == 'getFileName':
-        _getFileName()
-    elif sys.argv[1] == 'confirmFileSave':
-        _confirmFileSave()
-    elif sys.argv[1] == 'reportFileSaveError':
-        _reportFileSaveError(sys.argv[2])
-
+    n = 5
+    m = 8
+    setCanvasSize(800, 800)
+    setXscale(-5 * m,5 * m)
+    setYscale(-5 * n,5 * n)
+    np = point2DMatrix.point2DMatrix(0, 0, 5 * m, 5 * n, n, m)
+    for i in range(n):
+        for j in range(m):
+            p = np.pos(i, j)
+            filledSquare(p[0], p[1], 2.5)
+            print(p[0])
+            print(p[1])
+    show()
 if __name__ == '__main__':
     _main()

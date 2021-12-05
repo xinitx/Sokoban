@@ -36,15 +36,14 @@ class choose_map:
         create = tkinter.Button(root, text="创建地图", command= self.create_amap)
         create.grid(row = self.row + 2, column=1)
 
-        load = tkinter.Button(root, text="加载地图", command= self.load_map, anchor="e")
+        load = tkinter.Button(root, text="加载地图", command= self.load_map)
         load.grid(row = self.row + 2, column= 3)
     def create_amap(self):
         if(self.createE.get() != ""):
             create_map.create_map(self.root, self.n, self.m, self.file_buf + "/" + self.createE.get())
-
     def load_map(self):
         if self.files.count(self.createE.get()):
-            load_game(self.n, self.m, self.file_buf + "/" + self.createE.get(), self.root, "load")
+            load_game.start_game(self.n, self.m, self.file_buf + "/" + self.createE.get(), self.root, "load")
         else:
             textvar_error = tkinter.StringVar()
             error = tkinter.Label(self.root, textvariable = textvar_error)

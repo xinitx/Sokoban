@@ -51,7 +51,7 @@ class input_size:
                 self.rowE.destroy()
                 self.colL.destroy()
                 self.colE.destroy()
-                choose_map.choose_map(self.root, n, m)
+                choose_map.choose_map(self.root, n, m )
                 
 root = tkinter.Tk()
 input_size(root)
