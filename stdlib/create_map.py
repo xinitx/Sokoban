@@ -60,7 +60,7 @@ class create_map:
         start = ""
         
         for i in range(n):
-            for j in range(n):
+            for j in range(m):
                 p = np.get_value(i,j)
                 print(str(int(p)))
                 start += str(int(p))
